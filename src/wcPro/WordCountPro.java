@@ -44,43 +44,29 @@ static void wcPro(String input) throws IOException{
 		   String words[] = line.split(reg1); 
 		   for(String word: words){ 
 
-			   if(word.equals(""))
+			   if(word.equals("")||!word.matches(containLetter))
 					   continue;
 //			   System.out.print(word);
 //			   System.out.print(" : ");
 //			   System.out.print(firstIndex);
 //			   System.out.print(" , ");
 //			   System.out.println(lastIndex);
-			   int firstIndex=0,lastIndex=word.length(),len=word.length();
-			   if(word.matches(containLetter)) //如果含字母
+			   int firstIndex=0,lastIndex=word.length()-1;
+			   while(word.charAt(firstIndex)=='-')//寻找第一个字母的坐标
 			   {
-				   for(int i=0;i<len;i++)
-				   {
-					   if(word.charAt(i)!='-')
-					   {
-						   firstIndex=i;   //寻找第一个字母的坐标
-						   break;
-					   }
-				   }
-				   for(int i=len-1;i>-1;i--)
-				   {
-					   if(word.charAt(i)!='-')
-					   {
-						   lastIndex=i;   //寻找最后一个字母的坐标
-						   break;
-					   }
-				   }
-				   word=word.substring(firstIndex, lastIndex+1);
-				   if(!Info.containsKey(word)){ 
-					   Info.put(word,1); 
-				   }
-				   else{ 
-					   Info.put(word,Info.get(word)+1); 
-				   } 
-				   
+				   firstIndex++;
 			   }
-			   
-
+			   while(word.charAt(lastIndex)=='-')//寻找最后一个字母的坐标
+			   {
+				   lastIndex--;
+			   }
+			   word=word.substring(firstIndex, lastIndex+1);
+			   if(!Info.containsKey(word)){ 
+				   Info.put(word,1); 
+			   }
+			   else{ 
+				   Info.put(word,Info.get(word)+1); 
+			   } 
 		   } 
 
 		} 

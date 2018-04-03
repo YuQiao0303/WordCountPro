@@ -1,29 +1,30 @@
 package wcPro;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.TreeMap;
 
 public class WordCountPro {
 //---------------------------Attributes-----------------------------//
 	TreeMap Info;
 //-----------------------------methods-----------------------------//
-static Boolean IsInputValid(String[] input){	
-		if(input.length==0){
-			System.out.print("请输入文件名");
+static Boolean IsInputValid(ArrayList<String> strArray){	
+		if(strArray.size()==0){
+			System.out.println("请输入文件名");
 			return false;
 		}
-		else if(input.length>1){
-			System.out.print("请以格式wcPro.exe [input_file_name]输入命令");
+		else if(strArray.size()>1){
+			System.out.println("请以格式wcPro.exe [input_file_name]输入命令");
 			return false;
 		}
 		else{
-			File file=new File(input[0]);
+			File file=new File(strArray.get(0));
 			if(!file.exists()){
-				System.out.print("该文件不存在");
+				System.out.println("该文件不存在");
 				return false;
 				}
 			else{
-				System.out.print("文件为：");
-				System.out.print(input[0]);
+				System.out.println("文件为：");
+				System.out.print(strArray.get(0));
 				return true;
 				}
 			}
@@ -47,7 +48,7 @@ static Boolean IsInputValid(String[] input){
 		//蒋雨晨
 	}
 	
-	public static void main(String[] args){
+	public static void main(ArrayList<String> args){
 		IsInputValid(args);
 	}
 }

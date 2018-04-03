@@ -45,7 +45,7 @@ public class WCProTestYuQiao {
 		//给文件名赋值
 		for(int i=0;i<n;i++)
 		{
-			fileName[i]="YuTest"+i+".txt";
+			fileName[i]="YuQiaoTestFile\\YuTest"+i+".txt";
 			//System.out.println(fileName[i]);
 		}
 		//给文件内容赋值
@@ -132,7 +132,7 @@ public class WCProTestYuQiao {
 	 * Test method for {@link wcPro.WordCountPro#wcPro(java.lang.String)}.
 	 */
 	@Parameters
-	public static Collection usernameData() {  
+	public static Collection<Object[]> usernameData() {  
 		
 		TreeMap<String,Integer> expect0 = new TreeMap<String, Integer>();
 		TreeMap<String,Integer> expect1 = new TreeMap<String, Integer>();
@@ -220,41 +220,41 @@ public class WCProTestYuQiao {
 		
 		
 		return Arrays.asList(new Object[][] { 
-			{"YuTest0.txt",expect0},
-			{"YuTest1.txt",expect1}, 
-			{"YuTest2.txt",expect2}, 
-		    {"YuTest3.txt",expect3},
-		    {"YuTest4.txt",expect4},
-		    {"YuTest5.txt",expect5},
-		    {"YuTest6.txt",expect6},
-		    {"YuTest7.txt",expect7},
-		    {"YuTest8.txt",expect8},
-		    {"YuTest9.txt",expect9},
-		    {"YuTest10.txt",expect10},
-		    {"YuTest11.txt",expect11},
-		    {"YuTest12.txt",expect12},
-		    {"YuTest13.txt",expect13},
-		    {"YuTest14.txt",expect14},
-		    {"YuTest15.txt",expect15},
-		    {"YuTest16.txt",expect16},
-		    {"YuTest17.txt",expect17},
-		    {"YuTest18.txt",expect18},
-		    {"YuTest19.txt",expect19},
-		    {"YuTest20.txt",expect20},
-		    {"YuTest21.txt",expect21},
-		    {"YuTest22.txt",expect22},
-		    {"YuTest23.txt",expect23},
-		    {"YuTest24.txt",expect24},
-		    {"YuTest25.txt",expect25},
-		    {"YuTest26.txt",expect26},
-		    {"YuTest27.txt",expect27},
-		    {"YuTest28.txt",expect28},
-		    {"YuTest29.txt",expect29},
-		    {"YuTest30.txt",expect30},
-		    {"YuTest31.txt",expect31},
-		    {"YuTest32.txt",expect32},
-		    {"YuTest33.txt",expect33},
-		    {"YuTest34.txt",expect34}
+			{"YuQiaoTestFile\\YuTest0.txt",expect0},
+			{"YuQiaoTestFile\\YuTest1.txt",expect1}, 
+			{"YuQiaoTestFile\\YuTest2.txt",expect2}, 
+		    {"YuQiaoTestFile\\YuTest3.txt",expect3},
+		    {"YuQiaoTestFile\\YuTest4.txt",expect4},
+		    {"YuQiaoTestFile\\YuTest5.txt",expect5},
+		    {"YuQiaoTestFile\\YuTest6.txt",expect6},
+		    {"YuQiaoTestFile\\YuTest7.txt",expect7},
+		    {"YuQiaoTestFile\\YuTest8.txt",expect8},
+		    {"YuQiaoTestFile\\YuTest9.txt",expect9},
+		    {"YuQiaoTestFile\\YuTest10.txt",expect10},
+		    {"YuQiaoTestFile\\YuTest11.txt",expect11},
+		    {"YuQiaoTestFile\\YuTest12.txt",expect12},
+		    {"YuQiaoTestFile\\YuTest13.txt",expect13},
+		    {"YuQiaoTestFile\\YuTest14.txt",expect14},
+		    {"YuQiaoTestFile\\YuTest15.txt",expect15},
+		    {"YuQiaoTestFile\\YuTest16.txt",expect16},
+		    {"YuQiaoTestFile\\YuTest17.txt",expect17},
+		    {"YuQiaoTestFile\\YuTest18.txt",expect18},
+		    {"YuQiaoTestFile\\YuTest19.txt",expect19},
+		    {"YuQiaoTestFile\\YuTest20.txt",expect20},
+		    {"YuQiaoTestFile\\YuTest21.txt",expect21},
+		    {"YuQiaoTestFile\\YuTest22.txt",expect22},
+		    {"YuQiaoTestFile\\YuTest23.txt",expect23},
+		    {"YuQiaoTestFile\\YuTest24.txt",expect24},
+		    {"YuQiaoTestFile\\YuTest25.txt",expect25},
+		    {"YuQiaoTestFile\\YuTest26.txt",expect26},
+		    {"YuQiaoTestFile\\YuTest27.txt",expect27},
+		    {"YuQiaoTestFile\\YuTest28.txt",expect28},
+		    {"YuQiaoTestFile\\YuTest29.txt",expect29},
+		    {"YuQiaoTestFile\\YuTest30.txt",expect30},
+		    {"YuQiaoTestFile\\YuTest31.txt",expect31},
+		    {"YuQiaoTestFile\\YuTest32.txt",expect32},
+		    {"YuQiaoTestFile\\YuTest33.txt",expect33},
+		    {"YuQiaoTestFile\\YuTest34.txt",expect34}
 		});  
 	}  
 	//公共构造函数

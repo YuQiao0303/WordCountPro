@@ -44,8 +44,10 @@ static void wcPro(String input) throws IOException{
 		   String words[] = line.split(reg1); 
 		   for(String word: words){ 
 
-			   if(word.equals("")||!word.matches(containLetter))
+			   if (word.equals("")||!word.matches(containLetter))
 					   continue;
+			   
+			   
 //			   System.out.print(word);
 //			   System.out.print(" : ");
 //			   System.out.print(firstIndex);

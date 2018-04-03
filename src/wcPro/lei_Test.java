@@ -21,7 +21,7 @@ import java.util.TreeMap;
 //指定可以参数化运行测试用例的Runner
 @RunWith(Parameterized. class )
 
-public class WordCountProTest {
+public class lei_Test {
 
 	//属性声明
 	private   static  WordCountPro wordCount  =   new  WordCountPro();
@@ -164,7 +164,7 @@ public class WordCountProTest {
 
    }
 	
-	public WordCountProTest(String filename,TreeMap<String,Integer> expect) {
+	public lei_Test(String filename,TreeMap<String,Integer> expect) {
 		this.filename=filename;
 		this.expect=expect;
 	}

@@ -11,10 +11,13 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Comparator;
 
+
 public class WordCountPro {
- //---------------------------Attributes-----------------------------//
-static TreeMap<String,Integer> Info=new TreeMap<String, Integer>();
+
+//---------------------------Attributes-----------------------------//
+	static TreeMap<String,Integer> Info = new TreeMap<String,Integer>(); 
 //-----------------------------methods------------------------------//
+
 	Boolean IsInputValid(String input){
 		/* 判断参数是否合理，
 		 * 若不合理，报错，return false；(之后主函数退出)
@@ -22,6 +25,9 @@ static TreeMap<String,Integer> Info=new TreeMap<String, Integer>();
 		 * 商莹*/
 		return true;
 	}
+
+	
+//测试用的方法，返回值为一颗以单词为key，词频为value的红黑树
 
 static void wcPro(String input) throws IOException{
 		
@@ -36,6 +42,7 @@ static void wcPro(String input) throws IOException{
 		//读取文件 
 		while((line=br.readLine())!=null){ 
 		   line=line.toLowerCase(); 
+
 		   //System.out.println(line);
 		   String reg1 = "[\\s~`!#%\\^&\\*_\\.\\(\\)\\[\\]\\+=:;\"'\\|<>\\,/\\?0-9]+"; 
 		   String containLetter=".*[a-z].*";
@@ -43,16 +50,21 @@ static void wcPro(String input) throws IOException{
 		   //将读取的文本进行分割 
 		   String words[] = line.split(reg1); 
 		   for(String word: words){ 
+			   if(word.equals("")||!word.matches(containLetter))
+					   continue;
 
 			   if (word.equals("")||!word.matches(containLetter))
 					   continue;
 			   
+<<<<<<< HEAD
 			   
 //			   System.out.print(word);
 //			   System.out.print(" : ");
 //			   System.out.print(firstIndex);
 //			   System.out.print(" , ");
 //			   System.out.println(lastIndex);
+=======
+>>>>>>> 68ec0d9b82160896ceedd531bda3f527e61a8006
 			   int firstIndex=0,lastIndex=word.length()-1;
 			   while(word.charAt(firstIndex)=='-')//寻找第一个字母的坐标
 			   {
@@ -84,8 +96,8 @@ static void wcPro(String input) throws IOException{
 	
 	public static void main(String[] args) throws IOException{
 		//
-		wcPro("test.txt");
+		wcPro("test20.txt");
 		System.out.println(Info);
-
+		
 	}
 }

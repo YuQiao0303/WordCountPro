@@ -63,7 +63,7 @@ public class inputTest_ying {
 		 //////////////////////////////
 		 strArray4.add("11");
 		 //////////////////////////////
-		 strArray5.add("G:\\test.txt");
+		 strArray5.add("test.txt");
 		 //////////////////////////////
 		 strArray6.add("G:\\test.txt");
 		 strArray6.add("111");
@@ -78,7 +78,7 @@ public class inputTest_ying {
 		 //////////////////////////////
 		 strArray9.add("G:dds");
 		 /////////////////////////////
-		 strArray10.add("G:\\wc\\result.txt");
+		 strArray10.add("result.txt");
 		 /////////////////////////////
 		 strArray12.add("a");
 		 /////////////////////////////
@@ -89,7 +89,7 @@ public class inputTest_ying {
 		 strArray14.add("G:\\test.txt");
 		 strArray14.add("a");
 		 ///////////////////////////
-		 strArray15.add("G:\\wc\\12\\result.txt");
+		 strArray15.add("result.txt");
 		 ///////////////////////////
 		 strArray16.add("a");
 		 strArray16.add("a");
@@ -106,9 +106,9 @@ public class inputTest_ying {
 		 strArray19.add("-c");
 		 strArray19.add("G:\\test.txt");
 		 /////////////////////////
-		 strArray20.add("G:\\test.txt");
+		 strArray20.add("test.txt");
   
-        return Arrays.asList(new Object[][] { { strArray1, false}, { strArray2, false }, { strArray3, false }, { strArray4, false }, { strArray5, true }, { strArray6, false }, { strArray7, false }, { strArray8, false }, { strArray9, false }, { strArray10, true}, { strArray11, false }, { strArray12, false }, { strArray13, false }, { strArray14, false }, { strArray15, false }, { strArray16, false }, { strArray17, false }, { strArray18, false }, { strArray19, false }, { strArray20, true } });  
+        return Arrays.asList(new Object[][] { { strArray1, false}, { strArray2, false }, { strArray3, false }, { strArray4, false }, { strArray5, true }, { strArray6, false }, { strArray7, false }, { strArray8, false }, { strArray9, false }, { strArray10, true}, { strArray11, false }, { strArray12, false }, { strArray13, false }, { strArray14, false }, { strArray15, true }, { strArray16, false }, { strArray17, false }, { strArray18, false }, { strArray19, false }, { strArray20, true } });  
   
     } 
    // 编写测试方法，使用定义的变量作为参数进行测试。  

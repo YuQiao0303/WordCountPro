@@ -110,9 +110,7 @@ static void wcPro(String input) throws IOException{
 				return o2.getValue().compareTo(o1.getValue());  
 		    }  
 		});  
-	   
-
-		
+			
 		try {
 			File writefile= new File("result.txt");
 			if(!writefile.exists()){
@@ -134,46 +132,16 @@ static void wcPro(String input) throws IOException{
 		}catch(Exception e){
 		}
 		
-	}
-	
-
-	/*static boolean comparefile(TreeMap<String,Integer> Info,String path) {
-		output();
-		//比较“result.txt”与“path”内容是否相等
-		try {
-			File result = new File("result.txt");
-			File trueRes = new File(path);
-			List Rlist = new ArrayList();
-			List Tlist = new ArrayList();
-			BufferedReader Rbr = new BufferedReader(new FileReader(result)); 
-			BufferedReader Tbr = new BufferedReader(new FileReader(trueRes)); 
-			String lineTxt = null;
-			while((lineTxt = Rbr.readLine()) != null) {
-				Rlist.add(lineTxt);
-			}
-			while((lineTxt = Tbr.readLine()) != null) {
-				Tlist.add(lineTxt);
-			}
-			for(int i=0;i<Rlist.size();i++) {
-				if(!(Rlist.get(i)).equals(Tlist.get(i))){
-					System.out.println("不相同的是=="+Rlist.get(i));
-					return false;
-					}
-			}
-		}catch(Exception e) {
-			 System.out.println("读取文件内容出错");
+	}	
+	public static void main(String[] args) throws IOException{
+		ArrayList<String>  strArray = new ArrayList<String> ();
+		for(int i=0;i<args.length;i++){
+			strArray.add(args[i]);
 		}
-		System.out.println("Success");
-		return true;
-	}*/
-	
-	public static void main(ArrayList<String> args) throws IOException{
-		//
-		wcPro("test.txt");
-		System.out.println(Info);
-		output();
-		//comparefile(Info ,  "true3.txt");
-		IsInputValid(args);
+		if(IsInputValid(strArray)){
+			wcPro(args[0]);
+			output();
+		}
 	}
 	
 }

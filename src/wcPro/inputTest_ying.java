@@ -38,15 +38,15 @@ public class inputTest_ying {
 	static ArrayList<String>  strArray20 = new ArrayList<String> ();//wc.pro.exe G:\\wc\\result.txt
 
 	//为测试类声明几个变量，分别用于存放期望值和测试所用数据。
-	private ArrayList<String> Param;  
-    private boolean expect; 
+	private ArrayList<String> param;  
+    private static boolean expect; 
 	
 	@Before
 	public void setUp() throws Exception {
 	}
 	//为测试类声明一个带有参数的公共构造函数，并在其中为第二个环节中声明的几个变量赋值
-    public inputTest_ying(ArrayList<String> Param, boolean expect) {  
-        this.Param = Param;  
+    public inputTest_ying(ArrayList<String> param, boolean expect) {  
+        this.param = param;  
         this.expect = expect;  
     } 
     // 为测试类声明一个使用注解 org.junit.runners.Parameterized.Parameters 修饰的，返回值为  
@@ -114,7 +114,7 @@ public class inputTest_ying {
    // 编写测试方法，使用定义的变量作为参数进行测试。  
 	@Test
 	public void testIsInputValid() {		
-		assertEquals(this.expect, wcpro.IsInputValid(this.Param));
+		assertEquals(inputTest_ying.expect, WordCountPro.isInputValid(this.param));
 		 }
 
 

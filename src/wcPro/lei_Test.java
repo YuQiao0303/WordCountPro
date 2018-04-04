@@ -171,8 +171,8 @@ public class lei_Test {
 	
 	@Test
 	public void testWcPro() throws IOException {
-		wordCount.wcPro(filename);
-		assertEquals(expect,wordCount.Info);
+		WordCountPro.wcPro(filename);
+		assertEquals(expect,WordCountPro.Info);
 	}
 
 }

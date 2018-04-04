@@ -18,9 +18,9 @@ import java.util.Comparator;
 
 public class WordCountPro {
 //---------------------------Attributes-----------------------------//
-		static TreeMap<String,Integer> Info = new TreeMap<String,Integer>(); 
+static TreeMap<String,Integer> Info = new TreeMap<String,Integer>(); 
 //-----------------------------methods-----------------------------//
-static Boolean IsInputValid(ArrayList<String> strArray){
+static Boolean isInputValid(ArrayList<String> strArray){
 	/* 判断参数是否合理，
 	 * 若不合理，报错，return false；(之后主函数退出)
 	 * 若合理，return true（之后主函数中args【0】即为inputfilename）
@@ -71,8 +71,9 @@ static void wcPro(String input) throws IOException{
 		   //将读取的文本进行分割 
 		   String words[] = line.split(reg1); 
 		   for(String word: words){ 
-			   if(word.equals("")||!word.matches(containLetter))
+			   if("".equals(word)||!word.matches(containLetter)){
 					   continue;
+			   }
 			  
 			   int firstIndex=0,lastIndex=word.length()-1;
 			   while(word.charAt(firstIndex)=='-')//寻找第一个字母的坐标
@@ -105,6 +106,7 @@ static void wcPro(String input) throws IOException{
 		Collections.sort(list,new Comparator<Map.Entry<String,Integer>>() 
 		{  
 		            //升序排序  
+			@Override
 			public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2) 
 			{  
 				return o2.getValue().compareTo(o1.getValue());  
@@ -123,8 +125,9 @@ static void wcPro(String input) throws IOException{
 		            System.out.println(e.getKey()+":"+e.getValue());  
 		            out.write(e.getKey() + " "  + e.getValue()+ "\r\n");
 		            flag++;
-		            if(flag>=100)
+		            if(flag>=100){
 		            	break;
+		            }
 		        }  
 				
 			
@@ -141,7 +144,7 @@ static void wcPro(String input) throws IOException{
 		for(int i=0;i<args.length;i++){
 			strArray.add(args[i]);
 		}
-		if(IsInputValid(strArray)){
+		if(isInputValid(strArray)){
 			wcPro(args[0]);
 			output();
 		}

@@ -351,26 +351,27 @@ public class J_WordCountProTest {
 		this.result = result;
 	}
 
-	static boolean comparefile(TreeMap<String,Integer> Info,String path) {
+	static boolean comparefile(TreeMap<String,Integer> info,String path) {
+		WordCountPro.Info=info;
 		WordCountPro.output();
 		//比较“result.txt”与“path”内容是否相等
 		try {
 			File result = new File("result.txt");
 			File trueRes = new File(path);
-			List<String> Rlist = new ArrayList();
-			List Tlist = new ArrayList();
-			BufferedReader Rbr = new BufferedReader(new FileReader(result)); 
-			BufferedReader Tbr = new BufferedReader(new FileReader(trueRes)); 
+			List<String> rlist = new ArrayList();
+			List tlist = new ArrayList();
+			BufferedReader rbr = new BufferedReader(new FileReader(result)); 
+			BufferedReader tbr = new BufferedReader(new FileReader(trueRes)); 
 			String lineTxt = null;
-			while((lineTxt = Rbr.readLine()) != null) {
-				Rlist.add(lineTxt);
+			while((lineTxt = rbr.readLine()) != null) {
+				rlist.add(lineTxt);
 			}
-			while((lineTxt = Tbr.readLine()) != null) {
-				Tlist.add(lineTxt);
+			while((lineTxt = tbr.readLine()) != null) {
+				tlist.add(lineTxt);
 			}
-			for(int i=0;i<Rlist.size();i++) {
-				if(!(Rlist.get(i)).equals(Tlist.get(i))){
-					System.out.println("不相同的是=="+Rlist.get(i));
+			for(int i=0;i<rlist.size();i++) {
+				if(!(rlist.get(i)).equals(tlist.get(i))){
+					System.out.println("不相同的是=="+rlist.get(i));
 					return false;
 					}
 			}

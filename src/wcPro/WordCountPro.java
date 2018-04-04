@@ -167,7 +167,7 @@ static void wcPro(String input) throws IOException{
 		return true;
 	}*/
 	
-	public static void main(String[] args) throws IOException{
+	public static void main(ArrayList<String> args) throws IOException{
 		//
 		wcPro("test.txt");
 		System.out.println(Info);

@@ -2,8 +2,13 @@ package wcPro;
 
 import static org.junit.Assert.*;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 import java.util.TreeMap;
 
 import org.junit.Test;
@@ -347,12 +352,12 @@ public class J_WordCountProTest {
 	}
 
 	static boolean comparefile(TreeMap<String,Integer> Info,String path) {
-		wordCountPro.output();
+		WordCountPro.output();
 		//比较“result.txt”与“path”内容是否相等
 		try {
 			File result = new File("result.txt");
 			File trueRes = new File(path);
-			List Rlist = new ArrayList();
+			List<String> Rlist = new ArrayList();
 			List Tlist = new ArrayList();
 			BufferedReader Rbr = new BufferedReader(new FileReader(result)); 
 			BufferedReader Tbr = new BufferedReader(new FileReader(trueRes)); 

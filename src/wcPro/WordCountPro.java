@@ -1,4 +1,6 @@
 package wcPro;
+import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -13,17 +15,40 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Comparator;
 
+
 public class WordCountPro {
- //---------------------------Attributes-----------------------------//
-static TreeMap<String,Integer> Info=new TreeMap<String, Integer>();
-//-----------------------------methods------------------------------//
-	Boolean IsInputValid(String input){
-		/* 判断参数是否合理，
-		 * 若不合理，报错，return false；(之后主函数退出)
-		 * 若合理，return true（之后主函数中args【0】即为inputfilename）
-		 * 商莹*/
-		return true;
-	}
+//---------------------------Attributes-----------------------------//
+		static TreeMap<String,Integer> Info = new TreeMap<String,Integer>(); 
+//-----------------------------methods-----------------------------//
+static Boolean IsInputValid(ArrayList<String> strArray){
+	/* 判断参数是否合理，
+	 * 若不合理，报错，return false；(之后主函数退出)
+	 * 若合理，return true（之后主函数中args【0】即为inputfilename）
+	 * 商莹*/
+		if(strArray.size()==0){
+			System.out.println("请输入文件名");
+			return false;
+		}
+		else if(strArray.size()>1){
+			System.out.println("请以格式wcPro.exe [input_file_name]输入命令");
+			return false;
+		}
+		else{
+			File file=new File(strArray.get(0));
+			if(!file.exists()){
+				System.out.println("该文件不存在");
+				return false;
+				}
+			else{
+				System.out.println("文件为：");
+				System.out.print(strArray.get(0));
+				return true;
+				}
+			}
+		}
+
+
+//测试用的方法，返回值为一颗以单词为key，词频为value的红黑树
 
 static void wcPro(String input) throws IOException{
 		
@@ -38,6 +63,7 @@ static void wcPro(String input) throws IOException{
 		//读取文件 
 		while((line=br.readLine())!=null){ 
 		   line=line.toLowerCase(); 
+
 		   //System.out.println(line);
 		   String reg1 = "[\\s~`!#%\\^&\\*_\\.\\(\\)\\[\\]\\+=:;\"'\\|<>\\,/\\?0-9]+"; 
 		   String containLetter=".*[a-z].*";
@@ -45,44 +71,25 @@ static void wcPro(String input) throws IOException{
 		   //将读取的文本进行分割 
 		   String words[] = line.split(reg1); 
 		   for(String word: words){ 
-
-			   if(word.equals(""))
+			   if(word.equals("")||!word.matches(containLetter))
 					   continue;
-//			   System.out.print(word);
-//			   System.out.print(" : ");
-//			   System.out.print(firstIndex);
-//			   System.out.print(" , ");
-//			   System.out.println(lastIndex);
-			   int firstIndex=0,lastIndex=word.length(),len=word.length();
-			   if(word.matches(containLetter)) //如果含字母
+			  
+			   int firstIndex=0,lastIndex=word.length()-1;
+			   while(word.charAt(firstIndex)=='-')//寻找第一个字母的坐标
 			   {
-				   for(int i=0;i<len;i++)
-				   {
-					   if(word.charAt(i)!='-')
-					   {
-						   firstIndex=i;   //寻找第一个字母的坐标
-						   break;
-					   }
-				   }
-				   for(int i=len-1;i>-1;i--)
-				   {
-					   if(word.charAt(i)!='-')
-					   {
-						   lastIndex=i;   //寻找最后一个字母的坐标
-						   break;
-					   }
-				   }
-				   word=word.substring(firstIndex, lastIndex+1);
-				   if(!Info.containsKey(word)){ 
-					   Info.put(word,1); 
-				   }
-				   else{ 
-					   Info.put(word,Info.get(word)+1); 
-				   } 
-				   
+				   firstIndex++;
 			   }
-			   
-
+			   while(word.charAt(lastIndex)=='-')//寻找最后一个字母的坐标
+			   {
+				   lastIndex--;
+			   }
+			   word=word.substring(firstIndex, lastIndex+1);
+			   if(!Info.containsKey(word)){ 
+				   Info.put(word,1); 
+			   }
+			   else{ 
+				   Info.put(word,Info.get(word)+1); 
+			   } 
 		   } 
 
 		} 
@@ -129,7 +136,8 @@ static void wcPro(String input) throws IOException{
 		
 	}
 	
-	static boolean comparefile(TreeMap<String,Integer> Info,String path) {
+
+	/*static boolean comparefile(TreeMap<String,Integer> Info,String path) {
 		output();
 		//比较“result.txt”与“path”内容是否相等
 		try {
@@ -157,17 +165,15 @@ static void wcPro(String input) throws IOException{
 		}
 		System.out.println("Success");
 		return true;
-	}
+	}*/
+	
 	public static void main(String[] args) throws IOException{
 		//
-		
-		
 		wcPro("test.txt");
 		System.out.println(Info);
 		output();
-		comparefile(Info ,  "true3.txt");
-		
-		
-
+		//comparefile(Info ,  "true3.txt");
+		IsInputValid(args);
 	}
+	
 }

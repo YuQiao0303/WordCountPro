@@ -1,0 +1,6 @@
+~-test`test-!for-test#-for-test-%One^two&three*test_test...Four()test[One]two
++for-test=One:test;-for-test"One'two|three<
+test>for-test-,One.two/three?Four test
+
+
+	One0test12two345three678Four9

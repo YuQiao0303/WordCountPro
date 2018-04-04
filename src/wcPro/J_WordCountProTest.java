@@ -346,10 +346,40 @@ public class J_WordCountProTest {
 		this.result = result;
 	}
 
+	static boolean comparefile(TreeMap<String,Integer> Info,String path) {
+		wordCountPro.output();
+		//比较“result.txt”与“path”内容是否相等
+		try {
+			File result = new File("result.txt");
+			File trueRes = new File(path);
+			List Rlist = new ArrayList();
+			List Tlist = new ArrayList();
+			BufferedReader Rbr = new BufferedReader(new FileReader(result)); 
+			BufferedReader Tbr = new BufferedReader(new FileReader(trueRes)); 
+			String lineTxt = null;
+			while((lineTxt = Rbr.readLine()) != null) {
+				Rlist.add(lineTxt);
+			}
+			while((lineTxt = Tbr.readLine()) != null) {
+				Tlist.add(lineTxt);
+			}
+			for(int i=0;i<Rlist.size();i++) {
+				if(!(Rlist.get(i)).equals(Tlist.get(i))){
+					System.out.println("不相同的是=="+Rlist.get(i));
+					return false;
+					}
+			}
+		}catch(Exception e) {
+			 System.out.println("读取文件内容出错");
+		}
+		System.out.println("Success");
+		return true;
+	}
+	
 	@Test
 	public void testComparefile() {
 		//fail("Not yet implemented");
-		assertEquals(result, wordcount.comparefile(input1,input2));
+		assertEquals(result, comparefile(input1,input2));
 	}
 
 }

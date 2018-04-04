@@ -1,8 +1,10 @@
 package wcPro;
 import java.util.List;
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.TreeMap;
 import java.util.ArrayList;
@@ -89,15 +91,83 @@ static void wcPro(String input) throws IOException{
 		
 	} 
 		
-	void output(){    
+	static void output(){    
 		//将Info的相关内容输出到result.txt
 		//蒋雨晨
+		List<Entry<String, Integer>> list = new ArrayList<Entry<String, Integer>>(Info.entrySet()); 
+		Collections.sort(list,new Comparator<Map.Entry<String,Integer>>() 
+		{  
+		            //升序排序  
+			public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2) 
+			{  
+				return o2.getValue().compareTo(o1.getValue());  
+		    }  
+		});  
+	   
+
+		
+		try {
+			File writefile= new File("result.txt");
+			if(!writefile.exists()){
+				writefile.createNewFile();
+				}
+			BufferedWriter out = new BufferedWriter(new FileWriter(writefile));
+			
+			int flag = 0;
+			 for (Entry<String, Integer> e: list) {  
+		            System.out.println(e.getKey()+":"+e.getValue());  
+		            out.write(e.getKey() + " "  + e.getValue()+ "\r\n");
+		            flag++;
+		            if(flag>=100)
+		            	break;
+		        }  
+				
+			
+			out.close();
+		}catch(Exception e){
+		}
+		
 	}
 	
+	static boolean comparefile(TreeMap<String,Integer> Info,String path) {
+		output();
+		//比较“result.txt”与“path”内容是否相等
+		try {
+			File result = new File("result.txt");
+			File trueRes = new File(path);
+			List Rlist = new ArrayList();
+			List Tlist = new ArrayList();
+			BufferedReader Rbr = new BufferedReader(new FileReader(result)); 
+			BufferedReader Tbr = new BufferedReader(new FileReader(trueRes)); 
+			String lineTxt = null;
+			while((lineTxt = Rbr.readLine()) != null) {
+				Rlist.add(lineTxt);
+			}
+			while((lineTxt = Tbr.readLine()) != null) {
+				Tlist.add(lineTxt);
+			}
+			for(int i=0;i<Rlist.size();i++) {
+				if(!(Rlist.get(i)).equals(Tlist.get(i))){
+					System.out.println("不相同的是=="+Rlist.get(i));
+					return false;
+					}
+			}
+		}catch(Exception e) {
+			 System.out.println("读取文件内容出错");
+		}
+		System.out.println("Success");
+		return true;
+	}
 	public static void main(String[] args) throws IOException{
 		//
+		
+		
 		wcPro("test.txt");
 		System.out.println(Info);
+		output();
+		comparefile(Info ,  "true3.txt");
+		
+		
 
 	}
 }

@@ -134,6 +134,9 @@ static void wcPro(String input) throws IOException{
 		
 	}	
 	public static void main(String[] args) throws IOException{
+		/*将输入存入动态数组
+		 * 若输入判断为真则进行单词统计并输出
+		 * 商莹*/
 		ArrayList<String>  strArray = new ArrayList<String> ();
 		for(int i=0;i<args.length;i++){
 			strArray.add(args[i]);

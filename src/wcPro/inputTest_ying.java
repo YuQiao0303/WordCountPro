@@ -54,31 +54,31 @@ public class inputTest_ying {
     @Parameters  
     public static Collection usernameData() {  
     	 ///////////////////////////////
-		 strArray2.add("G:\\test.txt");
+		 strArray2.add("G:\\input1.txt");
 		 strArray2.add("-c");
 		 ///////////////////////////////
-		 strArray3.add("G:\\test.txt");
+		 strArray3.add("G:\\input1.txt");
 		 strArray3.add("-c");
-		 strArray3.add("G:\\test.txt");
+		 strArray3.add("G:\\input1.txt");
 		 //////////////////////////////
 		 strArray4.add("11");
 		 //////////////////////////////
-		 strArray5.add("test.txt");
+		 strArray5.add("input1.txt");
 		 //////////////////////////////
-		 strArray6.add("G:\\test.txt");
+		 strArray6.add("G:\\input1.txt");
 		 strArray6.add("111");
 		 //////////////////////////////
-		 strArray7.add("G:\\test.txt");
+		 strArray7.add("G:\\input1.txt");
 		 strArray7.add("11");
 		 strArray7.add("111");
 		 //////////////////////////////
-		 strArray8.add("G:\\test.txt");
+		 strArray8.add("G:\\input1.txt");
 		 strArray8.add("-c");
-		 strArray8.add("G:\\test.txt");
+		 strArray8.add("G:\\input1.txt");
 		 //////////////////////////////
 		 strArray9.add("G:dds");
 		 /////////////////////////////
-		 strArray10.add("result.txt");
+		 strArray10.add("input2.txt");
 		 /////////////////////////////
 		 strArray12.add("a");
 		 /////////////////////////////
@@ -86,27 +86,27 @@ public class inputTest_ying {
 		 strArray13.add("a");
 		 strArray13.add("a");
 		 ////////////////////////////
-		 strArray14.add("G:\\test.txt");
+		 strArray14.add("G:\\input1.txt");
 		 strArray14.add("a");
 		 ///////////////////////////
-		 strArray15.add("result.txt");
+		 strArray15.add("input2.txt");
 		 ///////////////////////////
 		 strArray16.add("a");
 		 strArray16.add("a");
 		 strArray16.add("a");
 		 strArray16.add("a");
 		 //////////////////////////
-		 strArray17.add("G:\\test.txt");
-		 strArray17.add("G:\\test.txt");
+		 strArray17.add("G:\\input1.txt");
+		 strArray17.add("G:\\input1.txt");
 		 //////////////////////////
-		 strArray18.add("G:\\test.txt");
+		 strArray18.add("G:\\input1.txt");
 		 strArray18.add("11");
 		 /////////////////////////
-		 strArray19.add("G:\\test.txt");
+		 strArray19.add("G:\\input1.txt");
 		 strArray19.add("-c");
-		 strArray19.add("G:\\test.txt");
+		 strArray19.add("G:\\input1.txt");
 		 /////////////////////////
-		 strArray20.add("test.txt");
+		 strArray20.add("input1.txt");
   
         return Arrays.asList(new Object[][] { { strArray1, false}, { strArray2, false }, { strArray3, false }, { strArray4, false }, { strArray5, true }, { strArray6, false }, { strArray7, false }, { strArray8, false }, { strArray9, false }, { strArray10, true}, { strArray11, false }, { strArray12, false }, { strArray13, false }, { strArray14, false }, { strArray15, true }, { strArray16, false }, { strArray17, false }, { strArray18, false }, { strArray19, false }, { strArray20, true } });  
   

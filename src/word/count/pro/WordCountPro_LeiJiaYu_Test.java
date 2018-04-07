@@ -1,4 +1,4 @@
-package wcPro;
+package word.count.pro;
 
 import static org.junit.Assert.*;
 
@@ -7,8 +7,6 @@ import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
-import   static  org.junit.Assert.assertEquals;
-import  org.junit.Test;
 import  org.junit.runner.RunWith;
 import  org.junit.runners.Parameterized;
 import  org.junit.runners.Parameterized.Parameters;
@@ -21,11 +19,9 @@ import java.util.TreeMap;
 //指定可以参数化运行测试用例的Runner
 @RunWith(Parameterized. class )
 
-public class lei_Test {
+public class WordCountPro_LeiJiaYu_Test {
 
-	//属性声明
-	private   static  WordCountPro wordCount  =   new  WordCountPro();
-    private   String  filename;
+	private   String  filename;
     private   TreeMap<String,Integer>  expect;
 	
     //默认需要重写的测试类方法
@@ -48,7 +44,7 @@ public class lei_Test {
 	
 	//开始设置所有的测试用例的输入与输出结果
 	@Parameters
-    public   static  Collection data()  {
+    public   static  Collection<Object[]> data()  {
 		//初始化所有的期望结果
 		TreeMap<String,Integer> expect1 = new TreeMap<String,Integer>(); //测试1，2，16，17
 		TreeMap<String,Integer> expect2 = new TreeMap<String,Integer>(); //测试15，18，19
@@ -164,7 +160,7 @@ public class lei_Test {
 
    }
 	
-	public lei_Test(String filename,TreeMap<String,Integer> expect) {
+	public WordCountPro_LeiJiaYu_Test(String filename,TreeMap<String,Integer> expect) {
 		this.filename=filename;
 		this.expect=expect;
 	}

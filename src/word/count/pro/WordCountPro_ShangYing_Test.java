@@ -1,4 +1,4 @@
-package wcPro;
+package word.count.pro;
 
 import static org.junit.Assert.*;
 
@@ -14,8 +14,7 @@ import org.junit.runners.Parameterized.Parameters;
 
 //测试类指定特殊的运行器org.junit.runners.Parameterized  
 @RunWith(Parameterized.class) 
-public class inputTest_ying { 
-	private static WordCountPro wcpro = new WordCountPro();
+public class WordCountPro_ShangYing_Test { 
 	static ArrayList<String>  strArray1 = new ArrayList<String> (); //wcpro.exe
 	static ArrayList<String>  strArray2 = new ArrayList<String> (); //wcpro.exe G:\\test.txt -c
 	static ArrayList<String>  strArray3 = new ArrayList<String> (); //wcpro.exe G:\\test.txt -c G:\\test.txt
@@ -45,14 +44,14 @@ public class inputTest_ying {
 	public void setUp() throws Exception {
 	}
 	//为测试类声明一个带有参数的公共构造函数，并在其中为第二个环节中声明的几个变量赋值
-    public inputTest_ying(ArrayList<String> param, boolean expect) {  
+    public WordCountPro_ShangYing_Test(ArrayList<String> param, boolean expect) {  
         this.param = param;  
-        this.expect = expect;  
+        WordCountPro_ShangYing_Test.expect = expect;  
     } 
     // 为测试类声明一个使用注解 org.junit.runners.Parameterized.Parameters 修饰的，返回值为  
     // java.util.Collection 的公共静态方法，并在此方法中初始化所有需要测试的参数对。  
     @Parameters  
-    public static Collection usernameData() {  
+    public static Collection<Object[]> usernameData() {  
     	 ///////////////////////////////
 		 strArray2.add("G:\\input1.txt");
 		 strArray2.add("-c");
@@ -114,7 +113,7 @@ public class inputTest_ying {
    // 编写测试方法，使用定义的变量作为参数进行测试。  
 	@Test
 	public void testIsInputValid() {		
-		assertEquals(inputTest_ying.expect, WordCountPro.isInputValid(this.param));
+		assertEquals(WordCountPro_ShangYing_Test.expect, WordCountPro.isInputValid(this.param));
 		 }
 
 

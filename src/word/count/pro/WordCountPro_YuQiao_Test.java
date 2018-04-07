@@ -1,7 +1,7 @@
 /**
  * 
  */
-package wcPro;
+package word.count.pro;
 
 import static org.junit.Assert.*;
 
@@ -27,7 +27,7 @@ import  org.junit.runners.Parameterized.Parameters;
  *
  */
 @RunWith(Parameterized.class )
-public class WCProTestYuQiao {
+public class WordCountPro_YuQiao_Test {
 
 	/**
 	 * @throws java.lang.Exception
@@ -129,7 +129,7 @@ public class WCProTestYuQiao {
 	}
 
 	/**
-	 * Test method for {@link wcPro.WordCountPro#wcPro(java.lang.String)}.
+	 * Test method for {@link word.count.pro.WordCountPro#wcPro(java.lang.String)}.
 	 */
 	@Parameters
 	public static Collection<Object[]> usernameData() {  
@@ -258,7 +258,7 @@ public class WCProTestYuQiao {
 		});  
 	}  
 	//公共构造函数
-	public WCProTestYuQiao(String param,TreeMap<String,Integer> expect) {  
+	public WordCountPro_YuQiao_Test(String param,TreeMap<String,Integer> expect) {  
 		this.param = param;  
 		this.expect = expect;
 	}  

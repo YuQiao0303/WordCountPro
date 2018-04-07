@@ -1,4 +1,4 @@
-package wcPro;
+package word.count.pro;
 
 import static org.junit.Assert.*;
 
@@ -17,14 +17,13 @@ import org.junit.runners.Parameterized.Parameters;
 import  org.junit.runners.Parameterized;
 
 @RunWith(Parameterized.class)
-public class J_WordCountProTest {
-	private static WordCountPro wordcount = new WordCountPro();
+public class WordCountPro_JiangYuChen_Test {
 	private TreeMap<String,Integer> input1;
 	private String input2;
 	private boolean result = true;
 	
 	@Parameters
-	public static Collection data() {
+	public static Collection<Object[]> data() {
 		//ÆÕÍ¨µÄÊ÷
 		TreeMap<String,Integer> tree1 = new TreeMap<String,Integer>();
 		tree1.put("miao", 1);
@@ -345,7 +344,7 @@ public class J_WordCountProTest {
 		});
 	}
 	
-	public J_WordCountProTest(TreeMap<String,Integer> input1,String input2,boolean result) {
+	public WordCountPro_JiangYuChen_Test(TreeMap<String,Integer> input1,String input2,boolean result) {
 		this.input1 = input1;
 		this.input2 = input2;
 		this.result = result;
@@ -358,9 +357,11 @@ public class J_WordCountProTest {
 		try {
 			File result = new File("result.txt");
 			File trueRes = new File(path);
-			List<String> rlist = new ArrayList();
-			List tlist = new ArrayList();
+			List<String> rlist = new ArrayList<String>();
+			List<String> tlist = new ArrayList<String>();
+			@SuppressWarnings("resource")
 			BufferedReader rbr = new BufferedReader(new FileReader(result)); 
+			@SuppressWarnings("resource")
 			BufferedReader tbr = new BufferedReader(new FileReader(trueRes)); 
 			String lineTxt = null;
 			while((lineTxt = rbr.readLine()) != null) {
